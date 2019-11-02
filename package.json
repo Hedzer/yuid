@@ -1,0 +1,47 @@
+{
+  "name": "yield-uid",
+  "version": "0.1.0",
+  "description": "Produces unique ids using javascript generator methods.",
+  "keywords": [
+    "generator",
+    "yield",
+    "esnext",
+    "es6",
+    "uid",
+    "uuid"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "prepublish": "tsc",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^2.3.0",
+    "typescript": "^3.6.2",
+    "tsc": "^1.20150623.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "ava"
+  },
+  "ava": {
+    "files": [
+      "./tests/*.js"
+    ],
+    "require": [
+      "esm"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hedzer/yield-uid.git"
+  },
+  "author": "Hedzer Ferwerda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hedzer/yield-uid/issues"
+  },
+  "homepage": "https://github.com/Hedzer/yield-uid#readme"
+}
