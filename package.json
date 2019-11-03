@@ -1,6 +1,6 @@
 {
   "name": "yield-uid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Produces unique ids using javascript generator methods.",
   "keywords": [
     "generator",
