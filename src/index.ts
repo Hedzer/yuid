@@ -14,10 +14,8 @@ class YieldUid {
 	}
 
 	static getId(): string {
-		return generator.next().value;
+		return this.generator().next().value;
 	}
 }
-
-const generator = YieldUid.generator();
 
 export default YieldUid;
