@@ -1,5 +1,4 @@
-
-## Yield UID (yuid)
+# Yield UID (yuid)
 
 ### What is it?
 `yuid` produces unique ids using javascript generator methods.
@@ -10,6 +9,7 @@
 3. Has a monotonic component
 
 A generated Id looks like this: "1-khjm3urk-2aru7hqvsdv"
+
 It is composed of: `${serial}-${time}-${random}`
 
 ### Installation
