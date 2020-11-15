@@ -1,14 +1,12 @@
+import uid from '../src/index';
 
-
-import test from 'ava';
-import uid from '../dist/index';
-
-test('try-collision', async t => {
+// prettier-ignore
+it('does not collide', async () => {
 	const map = new Map();
 	const generatorCount = 1000;
 	const valueCount = 2000;
 	const totalCount = generatorCount * valueCount;
-	let testCount = 0;
+	let testCount = 0; // prettier-ignore
 
 	const finished = new Promise((resolve, reject) => {
 		for (var i = 0; i < generatorCount; i++) {
@@ -31,6 +29,5 @@ test('try-collision', async t => {
 		}
 	});
 
-	const received = await finished;
-	t.is(received, 'PASSED');
+	expect(finished).resolves.toEqual('PASSED');
 });

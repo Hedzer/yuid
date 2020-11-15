@@ -1,15 +1,14 @@
-
-class YieldUid {
-	static * generator(): IterableIterator<string> {
+class Yuid {
+	static *generator(): IterableIterator<string> {
 		let serial: number = 0;
 		let random: string = '';
 		let time: string = '';
-		while(true) {
+		while (true) {
 			serial++;
 			serial = serial % Number.MAX_SAFE_INTEGER;
 			random = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
-			time = (new Date()).getTime().toString(36);
-			yield `${time}-${random}-${serial.toString(36)}`;
+			time = new Date().getTime().toString(36);
+			yield `${serial.toString(36)}-${time}-${random}`;
 		}
 	}
 
@@ -18,4 +17,5 @@ class YieldUid {
 	}
 }
 
-export default YieldUid;
+export { Yuid };
+export default Yuid;

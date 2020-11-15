@@ -1,48 +1,56 @@
 {
-  "name": "yield-uid",
+  "name": "yuid",
   "version": "0.2.0",
-  "description": "Produces unique ids using javascript generator methods.",
-  "keywords": [
-    "generator",
-    "yield",
-    "esnext",
-    "es6",
-    "uid",
-    "uuid"
-  ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "author": "Hedzer",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist",
+    "src"
   ],
-  "prepublish": "tsc",
-  "dependencies": {},
-  "devDependencies": {
-    "ava": "^3.12.1",
-    "esm": "^3.2.25",
-    "tsc": "^1.20150623.0",
-    "typescript": "^3.6.2"
+  "engines": {
+    "node": ">=10"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "ava"
+    "start": "tsdx watch",
+    "build": "tsdx build --name Yuid --format cjs,esm,umd,system --target node",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build --name Yuid --format cjs,esm,umd,system --target node",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
   },
-  "ava": {
-    "files": [
-      "./tests/*.js"
-    ],
-    "require": [
-      "esm"
-    ]
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hedzer/yield-uid.git"
+  "prettier": {
+    "useTabs": true,
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
-  "author": "Hedzer Ferwerda",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Hedzer/yield-uid/issues"
-  },
-  "homepage": "https://github.com/Hedzer/yield-uid#readme"
+  "module": "dist/yuid.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/yuid.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/yuid.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.7.0",
+    "husky": "^4.3.0",
+    "size-limit": "^4.7.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  }
 }
