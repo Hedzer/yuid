@@ -1,6 +1,6 @@
 {
   "name": "yuid",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Hedzer",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,11 +13,11 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build --name Yuid --format cjs,esm,umd,system --target node",
+    "start": "tsdx watch --target node",
+    "build": "tsdx build --target node",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build --name Yuid --format cjs,esm,umd,system --target node",
+    "prepare": "tsdx build --target node",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
